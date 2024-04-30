@@ -7,15 +7,13 @@ interface users {
 }
 
 const Login = () => {
-  const [auth, setAuth] = useState({ userId: "", getAuth: false });
-
   const navigate = useNavigate();
   const [users, setUsers] = useState<users>({
     email: "",
     password: "",
   });
 
-  const handleLogin = (e) => {
+  const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const user: users = {
       email: "",
